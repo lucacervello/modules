@@ -3,6 +3,7 @@
 
  :base
  {:require-restart? true
+  :requires [:kit/html]
   :actions
   {:assets     [["assets/shadow-cljs.edn" "shadow-cljs.edn"]]
    :injections [{:type   :html
@@ -51,9 +52,7 @@
                  :action :append-build-task-call
                  :value  (build-cljs)}]}}
  :reagent
- {:requires [:kit/html]
-  :feature-requires [:base]
-
+ {:feature-requires [:base]
   :actions
   {:assets [["assets/src/core.cljs" "src/cljs/<<sanitized>>/core.cljs"]
             ["assets/package.json"    "package.json"]]
@@ -64,8 +63,7 @@
                  :value  [reagent "1.1.0"]}]}}
 
  :uix
- {:requires [:kit/html]
-  :feature-requires [:base]
+ {:feature-requires [:base]
   :actions
   {:assets [["assets/src/core.uix.cljs" "src/cljs/<<sanitized>>/core.cljs"]
             ["assets/package.uix.json"    "package.json"]]
